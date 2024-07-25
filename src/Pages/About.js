@@ -6,7 +6,7 @@ return (
         <div>
             <h1 className="mt-10  justify-center text-center text-4xl text-red-500 font-bold bg-gradient-to-r from-pink-300">ABOUT US</h1>
             <div className="flex flex-row mt-10">
-            <p className="mt-5 ml-[15%] gap-10  text-justify text-2xl w-[70%] justify-center font-medium  ">At Techies Academia, we are on a mission to transform the educational landscape through
+            <p className="mt-5 ml-[5%] gap-10  text-justify text-2xl w-[90%] justify-center font-medium  ">At Techies Academia, we are on a mission to transform the educational landscape through
 innovation and technology. Founded on August 19, 2023, we have quickly established ourselves
 on social media platforms like Facebook, Instagram, X, and LinkedIn. Our commitment is to
 provide top-notch educational resources and services that cater to the evolving needs of both
