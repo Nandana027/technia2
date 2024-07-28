@@ -20,14 +20,14 @@ const Home = () => {
       <motion.div 
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: inView1 ? 1 : 0, y: inView1 ? 0 : -50 }}
-        transition={{ duration: 1 }}
-        className="flex flex-col md:flex-row justify-center items-center gap-x-[20%] mt-10 bg-gradient-to-r from-yellow-500 p-[10%] text-center md:text-left"
+        transition={{ duration: 0.5 }}
+        className="flex flex-col md:flex-row justify-center items-center gap-x-[30%]  bg-gradient-to-r from-yellow-500 p-[10%] text-center md:text-left"
         ref={setRef1}
       >
-        <p className="text-black font-bold text-3xl md:text-6xl">
+        <p className="text-black font-bold text-3xl md:text-6xl ">
           Enhance your learning with Technies Acadmia <br />
           <span className="text-black font-light text-lg">
-            learn with technis learn with technia learn with technia learn with technia learn with technia
+            learn with technis learn with technia learn with technia learn with technia 
           </span>
         </p>
 
@@ -38,7 +38,7 @@ const Home = () => {
           className="flex flex-col gap-10 mt-10 md:mt-0"
         >
           <p className="text-yellow-700 font-bold text-2xl md:text-4xl">KNOW MORE ABOUT US</p>
-          <button className="border-solid border-2 border-black rounded-3xl p-3 text-2xl font-semibold bg-black text-white transition transform hover:scale-105">
+          <button className="border-solid border-2 border-black rounded-2xl p-3 text-2xl font-semibold bg-black text-white transition transform hover:scale-105">
             Explore
           </button>
         </motion.div>
@@ -48,7 +48,7 @@ const Home = () => {
       <motion.div 
         initial={{ opacity: 0 }}
         animate={{ opacity: inView2 ? 1 : 0 }}
-        transition={{ duration: 1, delay: 1 }}
+        transition={{ duration: 1, delay: 0.3 }}
         ref={setRef2}
       >
         <Features />
@@ -58,7 +58,7 @@ const Home = () => {
       <motion.div 
         initial={{ opacity: 0 }}
         animate={{ opacity: inView3 ? 1 : 0 }}
-        transition={{ duration: 1, delay: 1.5 }}
+        transition={{ duration: 1, delay: 0.3 }}
         ref={setRef3}
       >
         <Testimonial />
@@ -68,7 +68,7 @@ const Home = () => {
       <motion.div 
         initial={{ opacity: 0 }}
         animate={{ opacity: inView4 ? 1 : 0 }}
-        transition={{ duration: 1, delay: 2 }}
+        transition={{ duration: 1, delay: 0.3 }}
         ref={setRef4}
       >
         <Mentors />
@@ -77,18 +77,18 @@ const Home = () => {
       {/* Courses */}
       <motion.div 
         initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: inView5 ? 1 : 0, scale: inView5 ? 1 : 0.8 }}
-        transition={{ duration: 1, delay: 2.5 }}
+        animate={{ opacity: inView5 ? 1 : 0}}
+        transition={{ duration: 1, delay: 0.3 }}
         ref={setRef5}
       >
-        <h1 className="text-center text-4xl md:text-6xl font-bold text-yellow-500 mt-10">Our Top Courses!!</h1>
+        <h1 className="text-center text-4xl md:text-6xl font-bold text-yellow-500 mt-10 space-y-10">Our Top Courses!!</h1>
         <CourseCarousel />
       </motion.div>
 
       <motion.div 
         initial={{ opacity: 0 }}
         animate={{ opacity: inView5 ? 1 : 0 }}
-        transition={{ duration: 1, delay: 3 }}
+        transition={{ duration: 0, delay: 0 }}
       >
         <Footer />
       </motion.div>

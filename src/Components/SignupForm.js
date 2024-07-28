@@ -31,14 +31,14 @@ const SignupForm = () => {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen p-4 bg-gray-100">
-      <div className="w-full max-w-md bg-white border-2 border-gray-200 rounded-xl shadow-lg p-6">
+    <div className="flex justify-center items-center min-h-screen p-4  ">
+      <div className="w-full max-w-md bg-white border-2 border-gray-500 rounded-xl shadow-lg p-6">
         <form onSubmit={handleSubmit} className="space-y-6">
-          <h1 className="text-3xl md:text-5xl font-bold text-yellow-600 text-center">SIGNUP</h1>
+          <h1 className="text-3xl md:text-5xl font-bold text-black text-center">Sign-up</h1>
           <div className="font-medium text-lg md:text-xl text-black mt-5">
             <label htmlFor="name">Username</label>
             <input
-              className="mt-1 block w-full px-3 py-2 border border-gray-400 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+              className="mt-1 block w-full px-3 py-2 border border-gray-400 rounded-md shadow-sm focus:outline-none focus:ring-indigo-800 focus:border-indigo-800 sm:text-sm"
               type="text"
               id="name"
               name="name"
@@ -62,7 +62,7 @@ const SignupForm = () => {
           <div className="font-medium text-lg md:text-xl text-black mt-5">
             <label htmlFor="password">Password</label>
             <input
-              className="mt-1 block w-full px-3 py-2 border border-gray-400 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+              className="mt-1 block w-full px-3 py-2 border border-gray-400 rounded-md shadow-sm focus:outline-none focus:ring-indigo-800 focus:border-indigo-800 sm:text-sm text-blue-800 font-bold underline"
               type="password"
               id="password"
               name="password"
@@ -75,8 +75,8 @@ const SignupForm = () => {
             Submit
           </button>
           <div className="text-center mt-5">
-            <p className="text-sm md:text-base">Already have an account?</p>
-            <Link to="/login" className="text-blue-600 text-sm md:text-base">Login</Link>
+            <p className="text-sm md:text-base font-semibold">Already have an account?</p>
+            <Link to="/login" className="text-blue-800 text-sm md:text-base font-bold underline">Login</Link>
           </div>
         </form>
       </div>

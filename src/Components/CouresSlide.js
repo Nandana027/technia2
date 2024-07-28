@@ -55,8 +55,8 @@ const CourseCarousel = () => {
   };
 
   return (
-    <div className="flex flex-col items-center mt-10 w-full px-5">
-      <Slider {...settings} className="w-full">
+    <div className="flex flex-col items-center mt-10 w-full px-5 space-x-5">
+      <Slider {...settings} className="w-full ">
         {/* {[...Array(6)].map((_, index) => (
           <div key={index} className="p-2"> */}
             <div className="border-solid border-2 shadow-lg shadow-gay-700 rounded-lg flex flex-col p-2">
@@ -69,7 +69,7 @@ const CourseCarousel = () => {
                 Click here
               </button>
             </div>
-            <div className="border-solid border-2 shadow-lg shadow-yellow-500/90 rounded-lg flex flex-col  p-2">
+            <div className="border-solid border-2 shadow-lg shadow-yellow-600/90 rounded-lg flex flex-col  p-2">
               <img
                 src="https://asset-cdn.learnyst.com/assets/schools/129716/courses/115265/EMFT_8iy94g.jpeg"
                 className="w-full rounded-lg"
@@ -79,7 +79,7 @@ const CourseCarousel = () => {
                 Click here
               </button>
             </div>
-            <div className="border-solid border-2 shadow-lg shadow-yellow-500/90 rounded-lg flex flex-col p-2">
+            <div className="border-solid border-2 shadow-lg shadow-yellow-600/90 rounded-lg flex flex-col p-2">
               <img
                 src="https://asset-cdn.learnyst.com/assets/schools/129716/courses/115265/EMFT_8iy94g.jpeg"
                 className="w-full rounded-lg"
@@ -89,7 +89,7 @@ const CourseCarousel = () => {
                 Click here
               </button>
             </div>
-            <div className="border-solid border-2 shadow-lg shadow-yellow-500/90 rounded-lg flex flex-col p-2">
+            <div className="border-solid border-2 shadow-lg shadow-yellow-600/90 rounded-lg flex flex-col p-2">
               <img
                 src="https://asset-cdn.learnyst.com/assets/schools/129716/courses/115265/EMFT_8iy94g.jpeg"
                 className="w-full rounded-lg"
@@ -99,7 +99,7 @@ const CourseCarousel = () => {
                 Click here
               </button>
             </div>
-            <div className="border-solid border-2 shadow-lg shadow-yellow-500/90 rounded-lg flex flex-col p-2">
+            <div className="border-solid border-2 shadow-lg shadow-yellow-600/90 rounded-lg flex flex-col p-2">
               <img
                 src="https://asset-cdn.learnyst.com/assets/schools/129716/courses/115265/EMFT_8iy94g.jpeg"
                 className="w-full rounded-lg"

@@ -4,7 +4,7 @@ const About=()=>{
 return (
     <div>
         <div>
-            <h1 className="mt-10  justify-center text-center text-4xl text-red-500 font-bold bg-gradient-to-r from-pink-300">ABOUT US</h1>
+            {/* <h1 className="mt-15  justify-center text-center text-4xl text-black-500 font-bold bg-gradient-to-r from-yellow-600">About Us</h1> */}
             <div className="flex flex-row mt-10">
             <p className="mt-5 ml-[5%] gap-10  text-justify text-2xl w-[90%] justify-center font-medium  ">At Techies Academia, we are on a mission to transform the educational landscape through
 innovation and technology. Founded on August 19, 2023, we have quickly established ourselves
@@ -17,10 +17,10 @@ students and educational institutions.</p>
             </div>
         </div>
         <div>
-            <h1 className="mt-20 justify-center text-center text-4xl text-red-500 font-bold bg-gradient-to-r from-pink-300">OUR JOURNEY AND MISSION</h1>
+            <h1 className="mt-20 justify-center text-center text-3xl text-black font-bold bg-gradient-to-r from-yellow-600">Ous Journey and Mission</h1>
            <div className="flex flex-row">
             {/* <img src="https://www.kindpng.com/picc/m/194-1947758_mission-png-transparent-images-word-mission-png-download.png" width="350px" height="250px" className="ml-[10%]"></img> */}
-           <p className="mt-10 gap-10  text-justify text-2xl w-[70%] justify-center ml-[15%]  font-semibold">Techies Academia was born out of a passion for education and technology. We recognized the
+           <p className="mt-5 gap-10  text-justify text-2xl w-[90%] justify-center ml-[5%]  font-medium">Techies Academia was born out of a passion for education and technology. We recognized the
 need for more engaging, practical, and up-to-date study materials for B.Tech students, as well
 as comprehensive support for educational institutions striving to excel. Our vision is to create a
 dynamic learning environment where students are not only prepared for academic success but
@@ -29,14 +29,15 @@ also for real-workchallenges and opportunities.</p>
         </div>
        
         <div className=" flex flex-col justify-center text-center">
-        <h1 className="mt-20 justify-center text-center text-4xl text-red-500 font-bold bg-gradient-to-r from-pink-300">OUR COMPREHENSIVE SUITE OF SERVICES</h1>
+        <h1 className="mt-20 justify-center text-center text-4xl text-black font-bold bg-gradient-to-r from-yellow-600">Our Comprehensive Suite of Services</h1>
             
          <div className="flex flex-row gap-[20%] mt-[4%] ml-[25%] justify-center   items-center p-10 w-[50%] ">
             <div className=" justify-center border-solid border-2 shadow-lg shadow-black-500/90 rounded-lg  flex flex-col  p-2 "> 
                 {/* <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVHhfMmxs7jy3c73a5iw7lWy-7cmRTsSthug&s" width="700px" ></img> */}
-                <h1 className="mt-10 justify-center text-center text-3xl text-red-500 font-bold" >Interactive & Innovative Study Materials:</h1>
+                <h1 className="mt-10 justify-center text-center text-3xl text-yellow-600 font-bold underline" >Interactive & Innovative Study Materials:</h1>
                 <p className="mt-5 gap-10 font-medium text-center text-2xl " >Tailored for B.Tech Students: Our study materials are meticulously designed to simplify
-complex engineering concepts. Through interactive modules, multimedia content, and practical
+complex engineering concepts. Through interactive modules, multimedia c
+ontent, and practical
 examples, we make learning both enjoyable and effective.
 - Engagement and Understanding: We believe in active learning. Our resources encourage
 students to engage deeply with the material, fostering a better understanding and retention of
@@ -50,7 +51,7 @@ knowledge.</p>
          <div className="flex flex-row gap-[20%] mt-[4%] ml-[25%] justify-center   items-center p-10 w-[50%] ">
             <div className=" justify-center border-solid border-2 shadow-lg shadow-black-500/90 rounded-lg  flex flex-col  p-2 "> 
                 {/* <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVHhfMmxs7jy3c73a5iw7lWy-7cmRTsSthug&s" width="700px" ></img> */}
-                <h1 className="mt-10 justify-center text-center text-3xl text-red-500 font-bold" >Preparatory Material for Placements:</h1>
+                <h1 className="mt-10 justify-center text-center text-3xl text-yellow-600 font-bold underline" >Preparatory Material for Placements:</h1>
                 <p className="mt-5 gap-10 font-medium text-center text-2xl " >Career-Focused Resources: We provide extensive preparatory materials to help students
 excel in placement interviews and secure their dream jobs. Our resources include mock tests,
 interview questions, resume-building tips, and more.
@@ -65,7 +66,7 @@ requirements, ensuring that students are well-prepared for the competitive job m
          <div className="flex flex-row gap-[20%] mt-[4%] ml-[25%] justify-center   items-center p-10 w-[50%] ">
             <div className=" justify-center border-solid border-2 shadow-lg shadow-black-500/90 rounded-lg  flex flex-col  p-2 "> 
                 {/* <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVHhfMmxs7jy3c73a5iw7lWy-7cmRTsSthug&s" width="700px" ></img> */}
-                <h1 className="mt-10 justify-center text-center text-3xl text-red-500 font-bold" >Blogs on Technological Developments and Research Advancements:</h1>
+                <h1 className="mt-10 justify-center text-center text-3xl text-yellow-600 font-bold underline" >Blogs on Technological Developments and Research Advancements:</h1>
                 <p className="mt-5 gap-10 font-medium text-center text-2xl " >- Stay Informed: Our blogs offer insights into the latest technological developments and
 research advancements in the field of engineering. Written by experts, these blogs keep
 students and professionals informed about cutting-edge innovations.
@@ -80,7 +81,7 @@ as a hub for exchanging ideas, fostering a community of learners and innovators.
          <div className="flex flex-row gap-[20%] mt-[4%] ml-[25%] justify-center   items-center p-10 w-[50%] ">
             <div className=" justify-center border-solid border-2 shadow-lg shadow-black-500/90 rounded-lg  flex flex-col  p-2 "> 
                 {/* <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVHhfMmxs7jy3c73a5iw7lWy-7cmRTsSthug&s" width="700px" ></img> */}
-                <h1 className="mt-10 justify-center text-center text-3xl text-red-500 font-bold" >Interactive & Innovative Study Materials:</h1>
+                <h1 className="mt-10 justify-center text-center text-3xl text-yellow-600 font-bold underline" >Interactive & Innovative Study Materials:</h1>
                 <p className="mt-5 gap-10 font-medium text-center text-2xl " >Tailored for B.Tech Students: Our study materials are meticulously designed to simplify
 complex engineering concepts. Through interactive modules, multimedia content, and practical
 examples, we make learning both enjoyable and effective.
@@ -96,7 +97,7 @@ knowledge.</p>
          <div className="flex flex-row gap-[20%] mt-[4%] ml-[25%] justify-center   items-center p-10 w-[50%] ">
             <div className=" justify-center border-solid border-2 shadow-lg shadow-black-500/90 rounded-lg  flex flex-col  p-2 "> 
                 {/* <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVHhfMmxs7jy3c73a5iw7lWy-7cmRTsSthug&s" width="700px" ></img> */}
-                <h1 className="mt-10 justify-center text-center text-3xl text-red-500 font-bold" >Hardware/Software Solutions for Educational Institutions:</h1>
+                <h1 className="mt-10 justify-center text-center text-3xl text-yellow-600 font-bold underline" >Hardware/Software Solutions for Educational Institutions:</h1>
                 <p className="mt-5 gap-10 font-medium text-center text-2xl " >- Streamlining Operations: We provide state-of-the-art hardware and software solutions to
 enhance the smooth functioning of educational institutions. From administrative tools to learning
 management systems, our solutions are designed to improve efficiency and effectiveness.
@@ -111,7 +112,7 @@ specific needs, offering ongoing support to ensure optimal performance.</p>
          <div className="flex flex-row gap-[20%] mt-[4%] ml-[25%] justify-center   items-center p-10 w-[50%] ">
             <div className=" justify-center border-solid border-2 shadow-lg shadow-black-500/90 rounded-lg  flex flex-col  p-2 "> 
                 {/* <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVHhfMmxs7jy3c73a5iw7lWy-7cmRTsSthug&s" width="700px" ></img> */}
-                <h1 className="mt-10 justify-center  text-center text-3xl text-red-500 font-bold" >Consultation for NBA/NAAC Accreditations and NIRF Rankings:</h1>
+                <h1 className="mt-10 justify-center  text-center text-3xl text-yellow-600 font-bold underline" >Consultation for NBA/NAAC Accreditations and NIRF Rankings:</h1>
                 <p className="mt-5 gap-10 font-medium text-center text-2xl " >- Expert Guidance: Achieving NBA/NAAC accreditations and improving NIRF rankings are
 crucial for educational institutions. Our team of experts provides comprehensive consultation to
 help institutions meet accreditation criteria and enhance their rankings.
@@ -127,7 +128,7 @@ only achieve but also maintain high standards of quality education.
          <div className="flex flex-row gap-[20%] mt-[4%] ml-[25%] justify-center   items-center p-10 w-[50%] ">
             <div className=" justify-center border-solid border-2 shadow-lg shadow-black-500/90 rounded-lg  flex flex-col  p-2 "> 
                 {/* <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVHhfMmxs7jy3c73a5iw7lWy-7cmRTsSthug&s" width="700px" ></img> */}
-                <h1 className="mt-10 justify-center text-center text-3xl text-red-500 font-bold" >Consultation on Entrepreneurship and Start-up Registration::</h1>
+                <h1 className="mt-10 justify-center text-center text-3xl text-yellow-600 font-bold underline" >Consultation on Entrepreneurship and Start-up Registration::</h1>
                 <p className="mt-5 gap-10 font-medium text-center text-2xl " > Fostering Innovation: We provide consultation to create an environment conducive to
 entrepreneurship within HEIs. Our services include mentoring, business jplan development, and
 support in navigating the start-up registration process.
@@ -141,8 +142,8 @@ entrepreneurship, helping institutions to become hubs of start-up activity and e
             </div>
         </div>
         <div>
-            <h1 className="mt-20 justify-center text-center text-4xl text-red-500 font-bold bg-gradient-to-r from-pink-300">OUR MISSION</h1>
-            <h2 className="mt-20 justify-center text-center text-2xl text-black font-bold ">Our Mission: Empowering Education through Innovation and Technology</h2>
+            <h1 className="mt-20 justify-center text-center text-4xl text-black font-bold bg-gradient-to-r from-yellow-600">OUR MISSION</h1>
+            <h2 className="mt-20 justify-center text-center text-2xl text-yellow-600 font-bold underline">Our Mission: Empowering Education through Innovation and Technology</h2>
           
             <p className="mt-5 gap-10  text-justify font-medium text-2xl w-[60%] justify-center ml-[19%] ">At Techies Academia, our mission is to revolutionize education by integrating cutting-edge
 technology and innovative approaches to learning. We are dedicated to providing high-quality
@@ -150,7 +151,7 @@ educational resources and support services that cater to the diverse needs of st
 educational institutions.</p>
         </div>
         <div>
-            <h1 className="mt-20 justify-center text-center text-4xl text-red-500 font-bold bg-gradient-to-r from-pink-300">OUR COMMITMENT</h1>
+            <h1 className="mt-20 justify-center text-center text-4xl text-black font-bold bg-gradient-to-r from-yellow-600">OUR COMMITMENT</h1>
         
           
             <p className="mt-5 gap-10  text-center text-2xl w-[60%] justify-center ml-[19%] font-medium ">At Techies Academia, we are committed to continuous improvement and excellence in
@@ -161,10 +162,10 @@ explore new ways to enhance learning experiences and support educational excelle
        
         
     </div>
-    <div className="flex flex-row gap-[20%] mt-[4%]  justify-center   items-center p-10  ">
-            <div className=" justify-center border-solid border-2 shadow-lg shadow-red-500/90 rounded-lg  flex flex-col  p-5 "> 
+    <div className="flex flex-row gap-[10%] mt-[4%]  justify-center   items-center p-10  ">
+            <div className=" justify-center border-solid border-2 shadow-lg shadow-black rounded-lg  flex flex-col  p-5 "> 
                 {/* <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVHhfMmxs7jy3c73a5iw7lWy-7cmRTsSthug&s" width="700px" ></img> */}
-                <h1 className="mt-10 justify-center text-center text-3xl text-red-500 font-bold" >Key Pillars of Our Mission:</h1>
+                <h1 className="mt-10 justify-center text-center text-3xl text-yellow-600 font-bold underline" >Key Pillars of Our Mission:</h1>
                 <ul className="gap-10 mt-10 text-2xl font-bold">
                     <li className="mt-10">1. Enhancing Student Learning</li>
                     <li className="mt-10">2. Preparing for Future Careers</li>
