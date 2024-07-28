@@ -1,104 +1,99 @@
 import React from "react";
+import { motion } from "framer-motion";
 import Footer from "../Components/Footer";
 import Features from "../Components/Features";
 import Testimonial from "../Components/Testimonial";
 import Mentors from "../Components/Mentors";
+import CourseCarousel from "../Components/CouresSlide";
+import useInView from "../Components/UseInView";
 
+const Home = () => {
+  const [setRef1, inView1] = useInView({ threshold: 0.1 });
+  const [setRef2, inView2] = useInView({ threshold: 0.1 });
+  const [setRef3, inView3] = useInView({ threshold: 0.1 });
+  const [setRef4, inView4] = useInView({ threshold: 0.1 });
+  const [setRef5, inView5] = useInView({ threshold: 0.1 });
 
+  return (
+    <div className="flex flex-col gap-7">
+      {/* Gradient part */}
+      <motion.div 
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: inView1 ? 1 : 0, y: inView1 ? 0 : -50 }}
+        transition={{ duration: 1 }}
+        className="flex flex-col md:flex-row justify-center items-center gap-x-[20%] mt-10 bg-gradient-to-r from-yellow-500 p-[10%] text-center md:text-left"
+        ref={setRef1}
+      >
+        <p className="text-black font-bold text-3xl md:text-6xl">
+          Enhance your learning with Technies Acadmia <br />
+          <span className="text-black font-light text-lg">
+            learn with technis learn with technia learn with technia learn with technia learn with technia
+          </span>
+        </p>
 
+        <motion.div 
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: inView1 ? 1 : 0, y: inView1 ? 0 : 50 }}
+          transition={{ duration: 1, delay: 0.5 }}
+          className="flex flex-col gap-10 mt-10 md:mt-0"
+        >
+          <p className="text-yellow-700 font-bold text-2xl md:text-4xl">KNOW MORE ABOUT US</p>
+          <button className="border-solid border-2 border-black rounded-3xl p-3 text-2xl font-semibold bg-black text-white transition transform hover:scale-105">
+            Explore
+          </button>
+        </motion.div>
+      </motion.div>
 
+      {/* Features card */}
+      <motion.div 
+        initial={{ opacity: 0 }}
+        animate={{ opacity: inView2 ? 1 : 0 }}
+        transition={{ duration: 1, delay: 1 }}
+        ref={setRef2}
+      >
+        <Features />
+      </motion.div>
 
-const Home=()=>{
-    return(
-        <div className="flex flex-col gap-7" >
+      {/* Testimonial */}
+      <motion.div 
+        initial={{ opacity: 0 }}
+        animate={{ opacity: inView3 ? 1 : 0 }}
+        transition={{ duration: 1, delay: 1.5 }}
+        ref={setRef3}
+      >
+        <Testimonial />
+      </motion.div>
 
+      {/* Mentor */}
+      <motion.div 
+        initial={{ opacity: 0 }}
+        animate={{ opacity: inView4 ? 1 : 0 }}
+        transition={{ duration: 1, delay: 2 }}
+        ref={setRef4}
+      >
+        <Mentors />
+      </motion.div>
 
-            {/* Gradient part */}
-         <div className="flex flex-row justify-center items-center gap-x-[20%] mt-[5%] bg-gradient-to-r from-yellow-500 p-[10%] ">
-            <p className="text-black font-bold text-6xl">Enhance your learning with Technies Acadmia <br></br><span className="text-black font-light text-lg text-cente justify-center">learn with technis learn with technia learn with technia learn with technia learn with technia</span></p>
-           
-           <div className="flex flex-col gap-10">
-           <p className="text-yellow-700 font-bold text-4xl font-sans">KNOW MORE ABOUT US</p>
-           <button className="border-solid border-2 border-black rounded-3xl p-3 text-2xl font-semibold bg-black text-white">Explore</button>
-           </div>
-            
+      {/* Courses */}
+      <motion.div 
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: inView5 ? 1 : 0, scale: inView5 ? 1 : 0.8 }}
+        transition={{ duration: 1, delay: 2.5 }}
+        ref={setRef5}
+      >
+        <h1 className="text-center text-4xl md:text-6xl font-bold text-yellow-500 mt-10">Our Top Courses!!</h1>
+        <CourseCarousel />
+      </motion.div>
 
-            
-         </div>
+      <motion.div 
+        initial={{ opacity: 0 }}
+        animate={{ opacity: inView5 ? 1 : 0 }}
+        transition={{ duration: 1, delay: 3 }}
+      >
+        <Footer />
+      </motion.div>
+    </div>
+  );
+};
 
-         
-       
-
-         {/* features card */}
-         <Features/>
-
-         
-         {/* testimonial */}
-         <Testimonial/>
-       
-         {/* mentor */}
-         <Mentors/>
-       
-         {/* courses */}
-        <h1 className="text-center text-6xl font-bold text-yellow-500 mt-10"> Our Top Courses!!</h1>
-         <div className="flex flex-col">
-            <div  className="flex flex-row ml-10  gap-10 mt-10">
-            <div className="border-solid border-2 shadow-lg shadow-yellow-500/90 rounded-lg  flex flex-col p-2 w-[30%] h-[40%]"> 
-                <img src="https://asset-cdn.learnyst.com/assets/schools/129716/courses/115265/EMFT_8iy94g.jpeg" width="700px"></img>
-                
-                <br></br>
-                <button className="border-solid border-2  text-white rounded p-3  bg-black">Click here</button>
-               
-               
-           </div>
-           <div className="border-solid border-2 shadow-lg shadow-yellow-500/90 rounded-lg  flex flex-col p-2 w-[30%] h-[40%]"> 
-                <img src="https://asset-cdn.learnyst.com/assets/schools/129716/courses/115265/EMFT_8iy94g.jpeg" width="700px"></img>
-               
-                <br></br>
-                <button className="border-solid border-2  text-white rounded p-3  bg-black">Click here</button>
-               
-               
-           </div>
-           <div className="border-solid border-2 shadow-lg shadow-yellow-500/90 rounded-lg  flex flex-col p-2 w-[30%] h-[40%]"> 
-                <img src="https://asset-cdn.learnyst.com/assets/schools/129716/courses/115265/EMFT_8iy94g.jpeg" width="700px"></img>
-               
-                <br></br>
-                <button className="border-solid border-2  text-white rounded p-3  bg-black">Click here</button>
-               
-               
-           </div>
-            </div>
-            <div className="flex flex-row ml-10  gap-10 mt-10">
-            <div className="border-solid border-2 shadow-lg shadow-yellow-500/90 rounded-lg  flex flex-col p-2 w-[30%] h-[40%]"> 
-                <img src="https://asset-cdn.learnyst.com/assets/schools/129716/courses/115265/EMFT_8iy94g.jpeg" width="700px"></img>
-               
-                <br></br>
-                <button className="border-solid border-2  text-white rounded p-3  bg-black">Click here</button>
-               
-               
-           </div>
-           <div className="border-solid border-2 shadow-lg shadow-yellow-500/90 rounded-lg  flex flex-col p-2 w-[30%] h-[40%]"> 
-                <img src="https://asset-cdn.learnyst.com/assets/schools/129716/courses/115265/EMFT_8iy94g.jpeg" width="700px"></img>
-                
-                <br></br>
-                <button className="border-solid border-2  text-white rounded p-3  bg-black">Click here</button>
-               
-               
-           </div>
-           <div className="border-solid border-2 shadow-lg shadow-yellow-500/90 rounded-lg  flex flex-col p-2 w-[30%] h-[40%]"> 
-                <img src="https://asset-cdn.learnyst.com/assets/schools/129716/courses/115265/EMFT_8iy94g.jpeg" width="700px"></img>
-                
-                <br></br>
-                <button className="border-solid border-2  text-white rounded p-3  bg-black">Click here</button>
-               
-               
-           </div>
-            </div>
-         </div>
-
-
-         <Footer/>
-        </div>
-    )
-}
 export default Home;

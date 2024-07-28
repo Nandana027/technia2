@@ -1,78 +1,86 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { CiSearch } from "react-icons/ci";
+import { FaBars, FaTimes } from "react-icons/fa";
+import logo from "../assets/logo.png";
+import SearchBar from "./Search";
 
+const Navbar = (props) => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { isLoggedIn, setIsLoggedIn } = props;
 
-const Navbar=(props)=>{
-    let isLoggedIn=props.isLoggedIn;
-    let setIsLoggedIn=props.setIsLoggedIn;
-    return(
-        <div className="flex justify-evenly text-2xl shadow-lg shadow-black-500/40 p-[2%]  w-[100%]">
-        <Link to="/">
-        <img src=" "></img>
-        </Link>
+  const handleMenuToggle = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
 
-        <nav>
-            <ul className="flex gap-5 text-black  font-bold  ">
-                <li>
-                   <NavLink to="/">Home</NavLink>
-                </li>
-                <li>
-                <NavLink to="/about">About us</NavLink>
-                </li>
-                <li>
-                <NavLink to="/">Contact us</NavLink>
-                </li>
-                <li>
-                <NavLink to="/">Blogs</NavLink>
-                </li>
-                <li>
-                <NavLink to="/">Products</NavLink>
-                </li>
-                <li>
-                <NavLink to="/">Courses</NavLink>
-                </li>
-                {/* <li>
-                <input type="text" placeholder="search  " className="border-solid border-2 text-center font-light  ml-10 w-[100%]  border-black text-black rounded-xl  "></input>
-                </li> */}
-            {/* <input type="text" placeholder="search" className=" border-blue rounded ml-[24%] text-center width-[10%]  "/> */}
-            </ul>
+  return (
+    <div className="flex justify-between items-center text-2xl shadow-lg shadow-black-500/40 p-7 w-full bg-white">
+      <Link to="/" className="flex items-center">
+        <img src={logo} alt="Logo" className="h-12 w-12" />
+        <span className="ml-4 text-lg font-bold">Techies Acadmia</span>
+      </Link>
 
-        </nav>
-        <div className="flex ml-5 mr-3 gap-5  ">
-            { !isLoggedIn &&
-                <Link to="/login">
-                    <button className="text-yellow-500 font-medium ">
-                        LogIn
-                    </button>
-                </Link>
-            }
-            { !isLoggedIn &&
-                <Link to="/signup">
-                   <button className="text-yellow-500 font-medium  ">
-                        SignUp
-                    </button>
-                </Link>
-            }
-            { isLoggedIn &&
-                <Link to="login">
-                    <button>
-                        Log Out
-                    </button>
-                </Link>
-            }
-            {  isLoggedIn &&
-                <Link to="/dashboard">
-                    <button  onClick={()=>{
-                        setIsLoggedIn(false);
-                        
-                    }}>
-                        Dashboard
-                    </button>
-                </Link>
-            }
-        </div>
-        </div>
-    )
-}
-export default Navbar; 
+      <div className="md:hidden">
+        <button onClick={handleMenuToggle}>
+          {isMenuOpen ? <FaTimes /> : <FaBars />}
+        </button>
+      </div>
+
+      <nav
+        className={`${
+          isMenuOpen ? "block" : "hidden"
+        } md:flex md:flex-row gap-5 text-black font-bold absolute md:static top-16 left-0 w-full md:w-auto bg-white md:bg-transparent p-4 md:p-0`}
+      >
+        <ul className="flex flex-col md:flex-row gap-5 hover">
+          <li className="hover:text-yellow-500">
+            <NavLink to="/" onClick={handleMenuToggle}>Home</NavLink>
+          </li>
+          <li className="hover:text-yellow-500">
+            <NavLink to="/about" onClick={handleMenuToggle}>About Us</NavLink>
+          </li>
+          <li className="hover:text-yellow-500">
+            <NavLink to="/contact" onClick={handleMenuToggle}>Contact Us</NavLink>
+          </li>
+          <li className="hover:text-yellow-500">
+            <NavLink to="/blogs" onClick={handleMenuToggle}>Blogs</NavLink>
+          </li>
+          <li className="hover:text-yellow-500">
+            <NavLink to="/products" onClick={handleMenuToggle}>Products</NavLink>
+          </li>
+          <li className="hover:text-yellow-500">
+            <NavLink to="/courses" onClick={handleMenuToggle}>Courses</NavLink>
+          </li>
+        </ul>
+      </nav>
+
+      <div className="hidden md:block">
+        <SearchBar />
+      </div>
+
+      <div className="flex gap-3">
+        {!isLoggedIn && (
+          <>
+            <Link to="/login" onClick={handleMenuToggle}>
+              <button className="text-yellow-500 font-bold hover:text-black p-3 rounded-xl" >Log In</button>
+            </Link>
+            <Link to="/signup" onClick={handleMenuToggle}>
+              <button className="text-yellow-500 font-bold hover:text-black  p-3 rounded-xl">Sign Up</button>
+            </Link>
+          </>
+        )}
+        {isLoggedIn && (
+          <>
+            <Link to="/dashboard">
+              <button onClick={() => setIsLoggedIn(false)}>Dashboard</button>
+            </Link>
+            <Link to="/login" onClick={handleMenuToggle}>
+              <button onClick={() => setIsLoggedIn(false)}>Log Out</button>
+            </Link>
+          </>
+        )}
+      </div>
+    </div>
+  );
+};
+
+export default Navbar;

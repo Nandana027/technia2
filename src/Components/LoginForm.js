@@ -6,31 +6,27 @@ import { useNavigate } from 'react-router-dom';
 const LoginForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const navigate=useNavigate();
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     axios.post('http://localhost:3001/login', { email, password })
-      .then(result =>{ console.log(result)
-
-      if(result.data === "success"){
-        navigate('/')
-
-      }
-    })
-      .catch(err => console.log(err))
-    
+      .then(result => {
+        console.log(result);
+        if (result.data === "success") {
+          navigate('/');
+        }
+      })
+      .catch(err => console.log(err));
   }
 
   return (
-    <div className='flex flex-col justify-center ml-[40%] mt-[10%] gap-10 border-2  w-[30%] h-[30%] p-10 rounded-xl shadow-lg shadow-black'>
-      
+    <div className='flex justify-center items-center min-h-screen p-4 bg-gray-100'>
+      <div className='w-full max-w-md bg-white border-2 border-gray-200 rounded-xl shadow-lg p-6'>
         <form onSubmit={handleSubmit} className="space-y-6">
-      <h1 className='text-5xl font-bold text-yellow-600 text-center'>LOGIN</h1>
-          <div className='font-medium text-xl  text-black mt-5'>
-            <label htmlFor="email" >
-              Email address
-            </label>
+          <h1 className='text-3xl md:text-5xl font-bold text-yellow-600 text-center'>LOGIN</h1>
+          <div className='font-medium text-lg md:text-xl text-black mt-5'>
+            <label htmlFor="email">Email address</label>
             <input
               type="email"
               id="email"
@@ -40,10 +36,8 @@ const LoginForm = () => {
               required
             />
           </div>
-          <div className='font-medium text-xl  text-black mt-5'>
-            <label htmlFor="password" >
-              Password
-            </label>
+          <div className='font-medium text-lg md:text-xl text-black mt-5'>
+            <label htmlFor="password">Password</label>
             <input
               type="password"
               id="password"
@@ -54,17 +48,17 @@ const LoginForm = () => {
             />
           </div>
           <div>
-          <button className="border-solid border-2 border-black rounded-2xl mt-10 w-[100%] p-2 text-2xl font-semibold bg-black text-white">Sign</button>
-
+            <button className="border-solid border-2 border-black rounded-2xl mt-10 w-full p-2 text-lg md:text-2xl font-semibold bg-black text-white">
+              Login
+            </button>
           </div>
           <div className='text-center mt-5'>
-     <p>Do not have an account?</p>
-     <Link to="/signup" className='text-blue-600'>SignUp</Link>
-
-     </div>
+            <p className='text-sm md:text-base'>Do not have an account?</p>
+            <Link to="/signup" className='text-blue-600 text-sm md:text-base'>SignUp</Link>
+          </div>
         </form>
       </div>
-
+    </div>
   );
 };
 

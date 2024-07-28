@@ -8,6 +8,7 @@ import About from "./Pages/About";
 import Signup from "./Pages/Signup";
 import Login from "./Pages/Login";
 import Testimonial from "./Components/Testimonial";
+import Courses from "./Pages/Courses";
 
 
 
@@ -28,6 +29,7 @@ const[isLoggedIn,setIsLoggedIn]
         <Route path="signup/" element={<Signup/>}/>
         <Route path="login/" element={<Login/>}/>
         <Route path="testimonial/" element={<Testimonial/>}/>
+        <Route path="courses/" element={<Courses/>}/>
         
         
       </Routes>
