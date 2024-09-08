@@ -1,31 +1,34 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const LoginForm = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post('http://localhost:3001/login', { email, password })
-      .then(result => {
+    axios
+      .post("http://localhost:3001/login", { email, password })
+      .then((result) => {
         console.log(result);
-        if (result.data === "success") {
-          navigate('/');
+        if (result.status === 200) {
+          navigate("/");
         }
       })
-      .catch(err => console.log(err));
-  }
+      .catch((err) => console.log(err));
+  };
 
   return (
-    <div className='flex justify-center items-center min-h-screen p-4 '>
-      <div className='w-full max-w-md bg-white border-2 border-gray-500 rounded-md shadow-lg p-6'>
+    <div className="flex justify-center items-center min-h-screen p-4 ">
+      <div className="w-full max-w-md bg-white border-2 border-gray-500 rounded-md shadow-lg p-6">
         <form onSubmit={handleSubmit} className="space-y-6">
-          <h1 className='text-3xl md:text-5xl font-bold text-black text-center'>Login</h1>
-          <div className='font-medium text-lg md:text-xl text-black mt-5'>
+          <h1 className="text-3xl md:text-5xl font-bold text-black text-center">
+            Login
+          </h1>
+          <div className="font-medium text-lg md:text-xl text-black mt-5">
             <label htmlFor="email">Email address</label>
             <input
               type="email"
@@ -36,7 +39,7 @@ const LoginForm = () => {
               required
             />
           </div>
-          <div className='font-medium text-lg md:text-xl text-black mt-5'>
+          <div className="font-medium text-lg md:text-xl text-black mt-5">
             <label htmlFor="password">Password</label>
             <input
               type="password"
@@ -52,9 +55,14 @@ const LoginForm = () => {
               Login
             </button>
           </div>
-          <div className='text-center mt-5'>
-            <p className='text-sm md:text-base'>Do not have an account?</p>
-            <Link to="/signup" className='text-blue-800 text-sm md:text-base font-bold underline'>SignUp</Link>
+          <div className="text-center mt-5">
+            <p className="text-sm md:text-base">Do not have an account?</p>
+            <Link
+              to="/signup"
+              className="text-blue-800 text-sm md:text-base font-bold underline"
+            >
+              SignUp
+            </Link>
           </div>
         </form>
       </div>
