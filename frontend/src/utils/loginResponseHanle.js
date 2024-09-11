@@ -1,21 +1,44 @@
-import React, { useContext } from "react";
-import { Link, NavLink } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
 import logo from "../assets/logo.png";
-import { AuthContext } from "../utils/AuthContext.js";
+import jwtDecode from "jwt-decode";
+
 import SearchBar from "./Search";
 
 const Navbar = () => {
-  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-  const { isLoggedIn, email, logout } = useContext(AuthContext);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [email, setEmail] = useState("");
+
+  // useLocation hook to monitor URL changes
+  const location = useLocation();
 
   const handleMenuToggle = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      try {
+        const decodedToken = jwtDecode(token);
+        setIsLoggedIn(true);
+        setEmail(decodedToken.email);
+      } catch (error) {
+        console.error("Invalid token:", error);
+        setIsLoggedIn(false);
+      }
+    } else {
+      setIsLoggedIn(false);
+    }
+  }, [location]); // dependency array includes location
+
   const handleLogout = () => {
-    logout();
-    window.location.href = "/login";
+    localStorage.removeItem("token");
+    setIsLoggedIn(false);
+    setEmail("");
+    window.location.href = "/login"; // Redirect to login page
   };
 
   return (

@@ -1,28 +1,38 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
 
 const LoginForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
-
+  const [hasReloaded, setHasReloaded] = useState(false);
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
       .post("http://localhost:3001/login", { email, password })
       .then((result) => {
         console.log(result);
+        console.log(result.status);
         if (result.status === 200) {
-          navigate("/");
+          const { token } = result.data;
+          console.log(token);
+
+          localStorage.setItem("token", token);
+          navigate("/dashboard");
+          if (!hasReloaded) {
+            setHasReloaded(true);
+            window.location.reload();
+          }
         }
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        console.error("Login error:", err);
+      });
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen p-4 ">
+    <div className="flex justify-center items-center min-h-screen p-4">
       <div className="w-full max-w-md bg-white border-2 border-gray-500 rounded-md shadow-lg p-6">
         <form onSubmit={handleSubmit} className="space-y-6">
           <h1 className="text-3xl md:text-5xl font-bold text-black text-center">
